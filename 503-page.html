@@ -5,32 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    
     <title>503</title>
 </head>
 <body>
     <div class="main-wrapper">
         <div class="app-window">
             <div class="page-503">
-                <div class="page-503-text">
+                <div class="page-503-text" id="text-503-mm">
                     <h1>Упс!</h1>
                     У вас нет доступа к этому контенту :-(<br>
-                    Для доступа нужен токен, подключите его с помощью 🦊 Метамаска
-                    <p><a href="/send-form.html">Пустити!</a></p>
+                    Подключите 🦊 <a href="https://metamask.io/download.html">Метамаск</a>
+                </div>
+                <div class="page-503-text" id="text-503-tok">
+                    <h1>Нет токена!</h1>
+                    У вас нет доступа к этому контенту :-(<br>
+                    ₿ <a href="https://www.coingecko.com/en/coins/bitcoin">купите токен</a>
+                </div>
+                <div class="page-503-text" id="text-503-ok">
+                    <h1>Ух ты!</h1>
+                    Добро пожаловать в кошелёк!<br>
+                    🏦 <a href="/send-form.html">вот ссылка</a>
                 </div>
             </div>
         </div>
     </div>
+    
     <script type="text/javascript">
         window.addEventListener('load', function() {
           if (typeof web3 !== 'undefined') {
-            console.log('web3 is enabled')
+            document.getElementById('text-503-tok').style.display = "block";
             if (web3.currentProvider.isMetaMask === true) {
-              console.log('MetaMask is active')
+                document.getElementById('text-503-ok').style.display = "block";
             } else {
-              console.log('MetaMask is not available')
+                document.getElementById('text-503-mm').style.display = "block";
             }
           } else {
-            console.log('web3 is not found')
+                document.getElementById('text-503-mm').style.display = "block";
           }
         })
     </script>
