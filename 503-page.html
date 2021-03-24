@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="http://rawgit.com/ethereum/web3.js/0.16.0/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethjs@0.3.0/dist/ethjs.min.js"></script>
+    <script type="text/javascript">
+    window.addEventListener('load', function() {
+            // Check if Web3 has been injected by the browser:
+            if (typeof web3 !== 'undefined') {
+                document.getElementById('text-503-ok').style.display = "block";
+            } else {
+                document.getElementById('text-503-mm').style.display = "block";
+            }
+    });
+    </script>
     
     <title>503</title>
 </head>
@@ -30,20 +42,5 @@
             </div>
         </div>
     </div>
-    
-    <script type="text/javascript">
-        window.addEventListener('load', function() {
-          if (typeof web3 !== 'undefined') {
-            document.getElementById('text-503-tok').style.display = "block";
-            if (web3.currentProvider.isMetaMask === true) {
-                document.getElementById('text-503-ok').style.display = "block";
-            } else {
-                document.getElementById('text-503-mm').style.display = "block";
-            }
-          } else {
-                document.getElementById('text-503-mm').style.display = "block";
-          }
-        })
-    </script>
 </body>
 </html>
