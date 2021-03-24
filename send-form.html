@@ -1,1 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Отправить</title>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="app-window">
+            <div class="wallet-page">
+                <div class="wallet-balance">
+                    На балансе:<br>
+                    <span class="wallet-balance-figure">10000</span>
+                </div>
+                <div class="wallet-send">
+                    <form action="">
+                        <h1>Отправить фантики:</h1>
+                        <p>
+                            <label for="address">Получатель:</label><br>
+                            <input type="text" id="address" name="user_address">
+                        </p>
+                        <p>
+                            <label for="howmuch">Количество:</label><br>
+                            <input type="text" id="howmuch" name="howmuch_send">
+                        </p>
+                        <p>
+                            <label for="msg">Комментарий:</label><br>
+                            <textarea id="msg" name="user_message"></textarea>
+                        </p>
+                        <p><button type="send">Отправить</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
