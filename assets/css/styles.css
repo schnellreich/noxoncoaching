@@ -69,3 +69,9 @@ body {
 #text-503-ok {
     display: none;
 }
+.enableEthereumButton {
+    background-color: #037dd6;
+    color: #fff;
+    padding: 5px;
+    border: none;
+}

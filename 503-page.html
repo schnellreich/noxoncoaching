@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <script src="http://rawgit.com/ethereum/web3.js/0.16.0/dist/web3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ethjs@0.3.0/dist/ethjs.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.min.js"> -->
     <script type="text/javascript">
     window.addEventListener('load', function() {
             // Check if Web3 has been injected by the browser:
@@ -16,8 +15,7 @@
                 document.getElementById('text-503-mm').style.display = "block";
             }
     });
-    </script>
-    
+    </script>    
     <title>503</title>
 </head>
 <body>
@@ -27,20 +25,33 @@
                 <div class="page-503-text" id="text-503-mm">
                     <h1>Упс!</h1>
                     У вас нет доступа к этому контенту :-(<br>
-                    Подключите 🦊 <a href="https://metamask.io/download.html">Метамаск</a>
-                </div>
-                <div class="page-503-text" id="text-503-tok">
-                    <h1>Нет токена!</h1>
-                    У вас нет доступа к этому контенту :-(<br>
-                    ₿ <a href="https://www.coingecko.com/en/coins/bitcoin">купите токен</a>
+                    Установите 🦊 <a href="https://metamask.io/download.html">Метамаск</a>
                 </div>
                 <div class="page-503-text" id="text-503-ok">
-                    <h1>Ух ты!</h1>
-                    Добро пожаловать в кошелёк!<br>
-                    🏦 <a href="/send-form.html">вот ссылка</a>
+                    <h1>🦊 Подключите кошелёк</h1>
+                    Нам нужно убедиться, что у вас есть токен доступа <br>
+                    <button class="enableEthereumButton">Подключиться</button><br>
+                    <div id="usdt_balance"></div> ETH
+                </div>
+                <div class="page-503-text" id="text-503-tok">
+                    <h1>Нет токена :-(</h1>
+                    У вас нет доступа к этому контенту<br>
+                    Сначала <a href="https://www.coingecko.com/en/coins/bitcoin">купите токен</a>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        const ethereumButton = document.querySelector('.enableEthereumButton');
+        ethereumButton.addEventListener('click', () => {
+            getAccount();
+        });
+
+        async function getAccount() {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+    };
+        
+     </script>
 </body>
 </html>
