@@ -31,7 +31,6 @@
                     <h1>🦊 Подключите кошелёк</h1>
                     Нам нужно убедиться, что у вас есть токен доступа <br>
                     <button class="enableEthereumButton">Подключиться</button><br>
-                    <div id="usdt_balance"></div> ETH
                 </div>
                 <div class="page-503-text" id="text-503-tok">
                     <h1>Нет токена :-(</h1>
@@ -47,10 +46,13 @@
             getAccount();
         });
 
-        async function getAccount() {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        const account = accounts[0];
-    };
+        var address = '0xAd15bd62b99c6F40809591BA69CAa0258beA1160';
+        var token = '0xdac17f958d2ee523a2206206994597c13d831ec7'
+        var url = "https://api.tokenbalance.com/balance/" + token + "/" + address;
+
+        let balance = fetch(url);
+
+        console.log(balance);
         
      </script>
 </body>
